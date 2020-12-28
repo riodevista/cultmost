@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">cultmost</string>
+    <string name="facebook_app_id">748105762713845</string>
+    <string name="fb_login_protocol_scheme">fb748105762713845</string>
+
+    <string name="register_with_enter_your_email">Авторизуйтесь</string>
+    <string name="email_address">Электронная почта</string>
+    <string name="register_policy">Продолжая вы соглашаетесь с тем, что прочитали и согласны с нашими <a href="https://google.com/">условиями использования</a> и <a href="https://google.com/">политикой конфиденциальности</a></string>
+    <string name="materials">Материалы</string>
+    <string name="courses">Наши занятия</string>
+    <string name="ar_models">AR модели</string>
+    <string name="about_us">О нас</string>
+    <string name="logout">Выйти</string>
+    <string name="main_screen">Главный экран</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
