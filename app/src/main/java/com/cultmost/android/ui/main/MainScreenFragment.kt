@@ -22,10 +22,6 @@ class MainScreenFragment : Fragment() {
 
     lateinit var glide: RequestManager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,7 +57,7 @@ class MainScreenFragment : Fragment() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://cultmost.ru/")
+                    Uri.parse("https://cultmost.com/")
                 )
             )
         }
