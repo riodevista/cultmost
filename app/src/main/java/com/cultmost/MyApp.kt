@@ -2,6 +2,7 @@ package com.cultmost
 
 import android.app.Application
 import com.cultmost.android.R
+import com.cultmost.android.domain.ArModel
 import com.cultmost.android.domain.Course
 import com.cultmost.android.domain.Item
 import com.cultmost.android.domain.Material
@@ -36,6 +37,13 @@ class MyApp : Application() {
                     Item("Как создавалась Елизавета", "14:58", "17 ноября 2019", "https://www.youtube.com/watch?v=p6n4-Mf2w-I")
                 )
             )
+        )
+
+        val arModels: Array<ArModel> = arrayOf(
+            ArModel("Статуя Давида", "Описание статуи Давида", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.david_preview),
+            ArModel("Египетская пирамида", "Описание египетской пирамиды", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.pyramid_preview),
+            ArModel("Еловая ветка", "Описание еловой ветки", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.tree_preview)
+
         )
     }
 

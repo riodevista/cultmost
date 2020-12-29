@@ -1,18 +1,15 @@
 package com.cultmost.android.ui
 
-import android.content.Intent
 import android.content.res.Configuration
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.view.MenuItem
-import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.cultmost.android.R
+import com.cultmost.android.ui.ar.ArModelsFragment
 import com.cultmost.android.ui.courses.CoursesFragment
 import com.cultmost.android.ui.main.MainScreenFragment
 import com.cultmost.android.ui.materials.MaterialsFragment
@@ -23,7 +20,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.withIdentifier
 import com.mikepenz.materialdrawer.model.interfaces.withName
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
 
 
 class MainScreenActivity : AppCompatActivity() {
@@ -160,8 +156,6 @@ class MainScreenActivity : AppCompatActivity() {
     }
 
 
-
-
     override fun onResume() {
         super.onResume()
         actionBarDrawerToggle.syncState()
@@ -223,17 +217,6 @@ class MainScreenActivity : AppCompatActivity() {
             }
             finish()
         }
-    }
-
-
-    fun showModel(view: View) {
-        val modelPath =
-            File(Environment.getExternalStorageDirectory(), "david_model.gltf").absolutePath
-        val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
-        sceneViewerIntent.data =
-            Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf")
-        sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox")
-        startActivity(sceneViewerIntent)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

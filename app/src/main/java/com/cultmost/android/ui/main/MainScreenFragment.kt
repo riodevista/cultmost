@@ -13,8 +13,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.cultmost.MyApp
 import com.cultmost.android.R
+import com.cultmost.android.domain.ArModel
 import com.cultmost.android.domain.Course
 import com.cultmost.android.domain.Item
+import com.cultmost.android.ui.ArModels.ArModelsAdapter
 import com.cultmost.android.ui.Items.MaterialItemsAdapter
 import com.cultmost.android.ui.MainScreenActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
@@ -62,6 +64,18 @@ class MainScreenFragment : Fragment() {
                 })
             }
 
+        ar_recycler_view.layoutManager = LinearLayoutManager(context)
+        ar_recycler_view.adapter =
+            ArModelsAdapter(Glide.with(this), MyApp.arModels).apply {
+                setOnItemClickListener(object : ArModelsAdapter.OnItemClickListener {
+
+                    override fun onClick(position: Int, arModel: ArModel) {
+                        openArModel(arModel)
+                    }
+
+                })
+            }
+
         courses_header.setOnClickListener {
             (activity as MainScreenActivity).showCourses()
         }
@@ -82,6 +96,14 @@ class MainScreenFragment : Fragment() {
                 )
             )
         }
+    }
+
+    private fun openArModel(arModel: ArModel) {
+        val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
+        sceneViewerIntent.data =
+            Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=${arModel.url}")
+        sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox")
+        startActivity(sceneViewerIntent)
     }
 
     private fun openUrl(url: String) {
