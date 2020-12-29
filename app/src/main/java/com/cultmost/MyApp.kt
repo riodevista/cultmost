@@ -41,7 +41,7 @@ class MyApp : Application() {
 
         val arModels: Array<ArModel> = arrayOf(
             ArModel("Статуя Давида", "Описание статуи Давида", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.david_preview),
-            ArModel("Египетская пирамида", "Описание египетской пирамиды", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.pyramid_preview),
+            ArModel("Египетская пирамида", "Описание египетской пирамиды", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/scene1.gltf", R.drawable.pyramid_preview),
             ArModel("Еловая ветка", "Описание еловой ветки", "https://raw.githubusercontent.com/riodevista/ar_sceneviewer/main/david_model.gltf", R.drawable.tree_preview)
 
         )
