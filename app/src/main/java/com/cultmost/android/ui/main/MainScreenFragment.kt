@@ -14,6 +14,8 @@ import com.bumptech.glide.RequestManager
 import com.cultmost.MyApp
 import com.cultmost.android.R
 import com.cultmost.android.domain.Course
+import com.cultmost.android.domain.Item
+import com.cultmost.android.ui.Items.MaterialItemsAdapter
 import com.cultmost.android.ui.MainScreenActivity
 import kotlinx.android.synthetic.main.fragment_main_screen.*
 
@@ -49,8 +51,27 @@ class MainScreenFragment : Fragment() {
             })
         }
 
+        materials_recycler_view.layoutManager = LinearLayoutManager(context)
+        materials_recycler_view.adapter =
+            MaterialItemsAdapter(Glide.with(this), MyApp.materials[0].items).apply {
+                setOnItemClickListener(object : MaterialItemsAdapter.OnItemClickListener {
+                    override fun onClick(position: Int, item: Item) {
+                        openUrl(item.url)
+                    }
+
+                })
+            }
+
         courses_header.setOnClickListener {
             (activity as MainScreenActivity).showCourses()
+        }
+
+        materials_header.setOnClickListener {
+            (activity as MainScreenActivity).showMaterials()
+        }
+
+        ar_header.setOnClickListener {
+            (activity as MainScreenActivity).showArModels()
         }
 
         cultmost_button.setOnClickListener {

@@ -271,4 +271,12 @@ class MainScreenActivity : AppCompatActivity() {
     fun showCourses() {
         switchToCoursesFragment()
     }
+
+    fun showMaterials() {
+        switchToMaterialsFragment()
+    }
+
+    fun showArModels() {
+        switchToARFragment()
+    }
 }
