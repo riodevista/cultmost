@@ -166,37 +166,6 @@ class MainScreenActivity : AppCompatActivity() {
             return
         }
 
-//        // Ensure Google Play Services for AR and ARCore device profile data are
-//        // installed and up to date.
-//        try {
-//            if (mSession == null) {
-//                switch (ArCoreApk.getInstance().requestInstall(this, mUserRequestedInstall)) {
-//                    case INSTALLED:
-//                    // Success, safe to create the AR session.
-//                    mSession = new Session(this);
-//                    break;
-//                    case INSTALL_REQUESTED:
-//                    // When this method returns `INSTALL_REQUESTED`:
-//                    // 1. This activity will be paused.
-//                    // 2. The user is prompted to install or update Google Play
-//                    //    Services for AR (market://details?id=com.google.ar.core).
-//                    // 3. ARCore downloads the latest device profile data.
-//                    // 4. This activity is resumed. The next invocation of
-//                    //    requestInstall() will either return `INSTALLED` or throw an
-//                    //    exception if the installation or update did not succeed.
-//                    mUserRequestedInstall = false;
-//                    return;
-//                }
-//            }
-//        } catch (UnavailableUserDeclinedInstallationException e) {
-//            // Display an appropriate message to the user and return gracefully.
-//            Toast.makeText(this, "TODO: handle exception " + e, Toast.LENGTH_LONG)
-//                .show();
-//            return;
-//        } catch (…) {  // Current catch statements.
-//            …
-//            return;  // mSession is still null.
-//        }
     }
 
     override fun onRequestPermissionsResult(
@@ -252,14 +221,17 @@ class MainScreenActivity : AppCompatActivity() {
     }
 
     fun showCourses() {
+        slider.setSelectionAtPosition(5, false)
         switchToCoursesFragment()
     }
 
     fun showMaterials() {
+        slider.setSelectionAtPosition(3, false)
         switchToMaterialsFragment()
     }
 
     fun showArModels() {
+        slider.setSelectionAtPosition(7, false)
         switchToARFragment()
     }
 }
