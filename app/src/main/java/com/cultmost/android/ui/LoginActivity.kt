@@ -120,7 +120,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun continueWithoutSignUp(view: View) {
+        AuthUseCase.saveUserEmail(applicationContext, "no_email")
         goToMainScreen()
+        finish()
     }
 
     fun loginWithGoogle(view: View) {

@@ -1,5 +1,6 @@
 package com.cultmost.android.ui
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.MenuItem
@@ -65,7 +66,12 @@ class MainScreenActivity : AppCompatActivity() {
         val item2 = PrimaryDrawerItem().withIdentifier(2).withName(R.string.courses)
         val item3 = PrimaryDrawerItem().withIdentifier(3).withName(R.string.ar_models)
         val item4 = PrimaryDrawerItem().withIdentifier(4).withName(R.string.about_us)
-        val item5 = PrimaryDrawerItem().withIdentifier(5).withName(R.string.logout)
+        val item5 = PrimaryDrawerItem().withIdentifier(5).withName(
+            if (AuthUseCase.getUserEmail(applicationContext).equals("no_email"))
+                "Авторизация"
+            else
+                getString(R.string.logout)
+        )
 
 
         slider.headerView = ImageView(this).apply {
@@ -117,6 +123,7 @@ class MainScreenActivity : AppCompatActivity() {
                 }
                 5L -> {
                     AuthUseCase.logout(applicationContext)
+                    startActivity(Intent(this, LoginActivity::class.java))
                     finish()
                 }
 
