@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cultmost.android.R
 import com.cultmost.android.ui.courses.CoursesFragment
 import com.cultmost.android.ui.main.MainScreenFragment
+import com.cultmost.android.ui.materials.MaterialsFragment
 import com.cultmost.android.usecases.AuthUseCase
 import com.cultmost.android.util.CameraPermissionHelper
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
