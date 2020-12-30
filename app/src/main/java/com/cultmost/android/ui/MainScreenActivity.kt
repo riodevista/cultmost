@@ -68,9 +68,9 @@ class MainScreenActivity : AppCompatActivity() {
         val item4 = PrimaryDrawerItem().withIdentifier(4).withName(R.string.about_us)
         val item5 = PrimaryDrawerItem().withIdentifier(5).withName(
             if (AuthUseCase.getUserEmail(applicationContext).equals("no_email"))
-                "Авторизация"
+                "Авторизоваться"
             else
-                getString(R.string.logout)
+                "${AuthUseCase.getUserEmail(applicationContext)}\n ${getString(R.string.logout)}"
         )
 
 
